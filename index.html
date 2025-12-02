@@ -9,7 +9,11 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Way Cafe.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Way Cafe" startnode="66" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="324FB709-F0F1-42F0-8A5B-5681D2EF14E3" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story {
+<tw-storydata name="Way Cafe" startnode="66" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="324FB709-F0F1-42F0-8A5B-5681D2EF14E3" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar {
+	display: none;
+}
+
+tw-story {
   background-image: url("https://github.com/kenthchen/gened1091-finalproject/blob/main/cafe%20background%20desktop.png?raw=true");
   background-size: cover;
   background-position: center center;
@@ -39,22 +43,25 @@ tw-passage[tags~="choose"] {
   box-shadow: 0 0 0px rgba(0,0,0,0);
   width: 100%;
   box-sizing: border-box;
+  padding-top: 0;
 }
 
 tw-story[tags~="news"] {
   background-image: url("https://github.com/kenthchen/gened1091-finalproject/blob/main/end%20title%20screen%20with%20ending%20space.png?raw=true");
-  padding: 0 15% 0;
+  padding: 40vh 15% 0;
 }
 
 tw-passage[tags~="news"] {
   background: rgba(255, 255, 255, 0);
   box-shadow: 0 0 0px rgba(0,0,0,0);
+  padding: 0;
 }
 
 .drink-grid {
   display: flex;
   width: 100%;
   gap: 0;
+  padding-top: 20vw;
 }
 
 
@@ -63,7 +70,7 @@ tw-passage[tags~="news"] {
   min-width: 0;
   box-sizing: border-box;
   text-align: center;
-  padding: 15vw 5% 0;
+  padding: 0 5% 0;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="choose" color="purple"></tw-tag><tw-tag name="no-t8n" color="red"></tw-tag><tw-tag name="news" color="green"></tw-tag><tw-passagedata pid="1" name="start_page" tags="" position="200,100" size="100,100">
 &lt;span style=&quot;font-size: 60pt&quot;&gt;Way Café&lt;/span&gt;
 
@@ -253,7 +260,6 @@ You have a j`*`b as a barista at the Way Café. Prepare drinks, meet strange cus
 	&lt;div class=&quot;drink-option&quot;&gt;
 		&lt;img src=&quot;https://github.com/kenthchen/gened1091-finalproject/blob/main/drinks/mozi%20communal%20coffee.png?raw=true&quot; style=&quot;width: 80%&quot;&gt;
 		(link: &quot;Communal Pot of Drip Coffee&quot;)[
-			(set: $harmony = $harmony + 2)
 			(set: $calmness = $calmness + 0)
 			(set: $wisdom = $wisdom + 1)
 			(set: $spontaneity = $spontaneity + -1)
@@ -480,7 +486,7 @@ You have a j`*`b as a barista at the Way Café. Prepare drinks, meet strange cus
 
 =|
 &lt;img src=&quot;https://github.com/kenthchen/gened1091-finalproject/blob/main/philosopher%20character/confucius%20sprite.png?raw=true&quot; style=&quot;width: 100%&quot;&gt;</tw-passagedata><tw-passagedata pid="19" name="ending_negative" tags="news" position="600,100" size="100,100">(text-style:&quot;shudder&quot;)[=
-&lt;span style=&quot;font-size: 24pt&quot;&gt;**BREAKING: Health Inspectors Temporarily Shut Down Way Café**&lt;/span&gt;
+&lt;span style=&quot;font-size: 150%&quot;&gt;**BREAKING: Health Inspectors Temporarily Shut Down Way Café**&lt;/span&gt;
 
 Way Café has been temporarily closed after several customer disputes escalated into physical altercations. Witnesses say the arguments began over drink orders but quickly spiraled into loud debates about morality, life, and the economic state of the world.
 
@@ -642,7 +648,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: I’m glad it meets your expectations…
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -657,7 +663,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: Simple is easier to make…
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -672,7 +678,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: Old men like you need some fun
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -687,7 +693,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: Glad it’s something you approve of…
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -702,7 +708,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: I figured it was a safe choice…
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -717,7 +723,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: I thought the little picture would make you smile… but I guess not.
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1018,7 +1024,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: Glad it fits your style… whatever that is.
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1033,7 +1039,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: That’s how things move in water… 
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1048,7 +1054,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: Glad it brings you some peace.
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1063,7 +1069,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: I figured you’d want something intense.
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1078,7 +1084,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: Glad it meets the minimum requirements…
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1094,7 +1100,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: Glad the technique shows.
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1109,7 +1115,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: As long as it’s refreshing.
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1124,7 +1130,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **You**: I figured it was a safe middle ground.
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1141,7 +1147,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **Laozi**: Even imbalance teaches. One learns the value of stillness by tasting its absence.
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1159,7 +1165,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **Lord Shang**: Days are not meant to be bright. They are meant to be orderly.
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1176,7 +1182,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **Xunzi**: Style is irrelevant. Discipline is what matters.
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
@@ -1193,7 +1199,7 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 
 **Zhuangzi**: Straight is fine I suppose.
 
-(link: &quot;*Continue to next customer*&quot;)[
+(link: &quot;Continue&quot;)[
 	(go-to: &quot;next_philosopher&quot;)
 ]
 
