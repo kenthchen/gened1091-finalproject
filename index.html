@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Way Cafe.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Way Cafe" startnode="66" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="324FB709-F0F1-42F0-8A5B-5681D2EF14E3" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar {
+<tw-storydata name="Way Cafe" startnode="22" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="324FB709-F0F1-42F0-8A5B-5681D2EF14E3" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar {
   display: none;
 }
 
@@ -366,38 +366,27 @@ You have a j`*`b as a barista at the Way Café. Prepare drinks, meet strange cus
 	&lt;/div&gt;
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="14" name="ending" tags="" position="500,100" size="100,100">(if: $harmony &lt; 0 or $calmness &lt; 0 or $wisdom &lt; 0 or $spontaneity &lt; 0)[
-	(go-to: &quot;ending_negative&quot;)
+	(goto: &quot;ending_negative&quot;)
 ]
 
-(set: $maxName to &quot;Harmony&quot;)
-(set: $maxVal to $harmony)
+(set: _maxVal to (max: $harmony, $calmness, $wisdom, $spontaneity))
+(set: _endings to (a:))
 
-(if: $calmness &gt; $maxVal)[
-	(set: $maxName to &quot;Calmness&quot;)
-	(set: $maxVal to $calmness)
+(if: $harmony is _maxVal)[
+  (set: _endings to _endings + (a: &quot;ending_harmony&quot;))
 ]
-(if: $wisdom &gt; $maxVal)[
-	(set: $maxName to &quot;Wisdom&quot;)
-	(set: $maxVal to $wisdom)
+(if: $calmness is _maxVal)[
+  (set: _endings to _endings + (a: &quot;ending_calmness&quot;))
 ]
-(if: $spontaneity &gt; $maxVal)[
-	(set: $maxName to &quot;Spontaneity&quot;)
-	(set: $maxVal to $spontaneity)
+(if: $wisdom is _maxVal)[
+  (set: _endings to _endings + (a: &quot;ending_wisdom&quot;))
+]
+(if: $spontaneity is _maxVal)[
+  (set: _endings to _endings + (a: &quot;ending_spontaneity&quot;))
 ]
 
-;; Route to a specific news-ending passage
-(if: $maxName is &quot;Harmony&quot;)[
-	(go-to: &quot;ending_harmony&quot;)
-]
-(else-if: $maxName is &quot;Calmness&quot;)[
-	(go-to: &quot;ending_calmness&quot;)
-]
-(else-if: $maxName is &quot;Wisdom&quot;)[
-	(go-to: &quot;ending_wisdom&quot;)
-]
-(else-if: $maxName is &quot;Spontaneity&quot;)[
-	(go-to: &quot;ending_spontaneity&quot;)
-]</tw-passagedata><tw-passagedata pid="15" name="confucius_dialogue02" tags="" position="300,300" size="100,100">||||=
+(set: _chosenEnding to _endings&#39;s (random: 1, _endings&#39;s length))
+(goto: _chosenEnding)</tw-passagedata><tw-passagedata pid="15" name="confucius_dialogue02" tags="" position="300,300" size="100,100">||||=
 *Confucius enters the café.*
 
 **You**: Welcome! Please make yourself comfortable.
