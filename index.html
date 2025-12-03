@@ -71,7 +71,22 @@ tw-passage[tags~="news"] {
   box-sizing: border-box;
   text-align: center;
   padding: 0 5% 0;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="choose" color="purple"></tw-tag><tw-tag name="no-t8n" color="red"></tw-tag><tw-tag name="news" color="green"></tw-tag><tw-passagedata pid="1" name="start_page" tags="" position="200,100" size="100,100">
+}
+
+tw-hook[name="restart"] {
+  position: fixed;
+  top: 0;
+  left: 1em;
+  z-index: 999;
+}
+
+tw-hook[name="restart"] tw-link {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 0.5em 0.75em;
+  border-radius: 1em;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  font-size: 1.5vw;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="choose" color="purple"></tw-tag><tw-tag name="no-t8n" color="red"></tw-tag><tw-tag name="news" color="green"></tw-tag><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="start_page" tags="" position="200,100" size="100,100">
 &lt;span style=&quot;font-size: 300%&quot;&gt;**Way Café**&lt;/span&gt;
 
 
@@ -1261,7 +1276,13 @@ Some claim the barista encourages customers to “go with the flow,” while oth
 (set: $queue to (shuffled: ...$philosophers))
 (set: $customer_index to 1)
 
-(go-to: &quot;start_page&quot;)</tw-passagedata></tw-storydata>
+(go-to: &quot;start_page&quot;)</tw-passagedata><tw-passagedata pid="67" name="start_over" tags="footer" position="100,1000" size="100,100">|restart&gt;[
+	(if: ((passage:)&#39;s name is not &quot;start_page&quot;) and (not ((passage:)&#39;s tags contains &quot;news&quot;)))[
+		(link: &quot;Restart ↺&quot;)[
+			(go-to: &quot;setup&quot;)
+		]
+	]
+]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
